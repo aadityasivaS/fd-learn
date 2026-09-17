@@ -6,7 +6,6 @@ import {
   KeyRound,
   Network,
   ScanSearch,
-  Sparkles,
 } from "lucide-react";
 import { CtaLink, SiteShell } from "@/components/site-shell";
 

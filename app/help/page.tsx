@@ -6,6 +6,8 @@ const steps = [
   "Run the algorithm. Use Previous and Next to inspect the execution trace.",
   "Use TXT or PDF to download the current inputs and result.",
   "Switch Day/Night from the moon button in the navigation.",
+  "On Practice, choose a question count and difficulty, then generate a Gemini quiz.",
+  "Submit each answer to receive server-graded feedback and an explanation.",
 ];
 export default function Help() {
   return (
@@ -31,6 +33,18 @@ export default function Help() {
             Missing relation attributes, malformed arrows, empty left or right
             sides, duplicate attributes, and attributes outside the relation are
             all worth checking before you run.
+          </p>
+        </div>
+        <div className="panel mt-6 rounded-3xl p-7">
+          <h2 className="text-2xl font-black">Gemini Practice setup</h2>
+          <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+            Copy <code>.env.example</code> to <code>.env.local</code> and add a
+            server-only
+            <code> GEMINI_API_KEY</code>. Add a long random{" "}
+            <code>QUIZ_SIGNING_SECRET</code>
+            as well. Never prefix either value with <code>NEXT_PUBLIC_</code>.
+            The browser receives questions and encrypted grading tokens, while
+            answers remain on the server.
           </p>
         </div>
       </div>
