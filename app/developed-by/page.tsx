@@ -15,10 +15,10 @@ export default function DevelopedBy() {
             { name: "Boyina Suryaa", regno: "25BCE1867" },
           ].map((name, index) => (
             <div className="panel rounded-3xl p-5" key={index}>
-              <div className="grid aspect-square place-items-center rounded-2xl bg-[var(--ink)] text-4xl text-[var(--background)]">
+              {/* <div className="grid aspect-square place-items-center rounded-2xl bg-[var(--ink)] text-4xl text-[var(--background)]">
                 {String(index + 1).padStart(2, "0")}
-              </div>
-              <h2 className="mt-5 font-black">{name.name}</h2>
+              </div> */}
+              <h2 className=" font-black">{name.name}</h2>
               <p className="mt-1 text-sm text-[var(--muted)]">{name.regno}</p>
             </div>
           ))}
