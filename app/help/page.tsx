@@ -35,18 +35,6 @@ export default function Help() {
             all worth checking before you run.
           </p>
         </div>
-        <div className="panel mt-6 rounded-3xl p-7">
-          <h2 className="text-2xl font-black">Gemini Practice setup</h2>
-          <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-            Copy <code>.env.example</code> to <code>.env.local</code> and add a
-            server-only
-            <code> GEMINI_API_KEY</code>. Add a long random{" "}
-            <code>QUIZ_SIGNING_SECRET</code>
-            as well. Never prefix either value with <code>NEXT_PUBLIC_</code>.
-            The browser receives questions and encrypted grading tokens, while
-            answers remain on the server.
-          </p>
-        </div>
       </div>
     </SiteShell>
   );
