@@ -45,6 +45,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <Link href="/practice" className="hover:text-[var(--ink)]">
               Practice
             </Link>
+            <Link href="/exam-practice" className="hover:text-[var(--ink)]">
+              Exam mode
+            </Link>
             <Link href="/help" className="hover:text-[var(--ink)]">
               Help
             </Link>
@@ -72,7 +75,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <main>{children}</main>
       <footer className="mx-auto flex max-w-7xl justify-between border-t px-5 py-7 text-xs text-[var(--muted)]">
         <span>Built for curious database minds.</span>
-        <span>Local execution · no account required</span>
+        <span>
+          The possession of facts is knowledge; the use of them is wisdom.
+        </span>
       </footer>
     </div>
   );

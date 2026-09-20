@@ -3,16 +3,15 @@
 import { useEffect, useState } from "react";
 import {
   CheckCircle2,
-  Clock3,
   Lightbulb,
   LoaderCircle,
   RotateCcw,
   Send,
   Settings2,
-  Trophy,
   XCircle,
 } from "lucide-react";
 import { SiteShell } from "@/components/site-shell";
+import { QuizScorecard, QuizTimer } from "@/components/quiz-components";
 import type {
   GenerateQuizResponse,
   GradeQuizResponse,
@@ -164,7 +163,7 @@ export default function Practice() {
             error={error}
           />
         ) : quizComplete ? (
-          <Scorecard
+          <QuizScorecard
             total={quiz.questions.length}
             score={score}
             answeredCount={answeredCount}
@@ -226,7 +225,9 @@ function SetupCard({
           <Settings2 size={21} />
         </div>
         <div>
-          <h2 className="text-2xl font-black">Build your quiz</h2>
+          <h2 className="text-2xl font-black">
+            Build your quiz powered by Gemini
+          </h2>
           <p className="mt-1 text-sm text-[var(--muted)]">
             Gemini will create functional-dependency questions from these
             settings.
@@ -348,13 +349,7 @@ function QuizCard({
         <span className="rounded-full border px-3 py-1 uppercase">
           {difficulty} · {score} correct
         </span>
-        {timerEnabled && (
-          <span
-            className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 font-mono ${timerRemaining <= 60 ? "border-red-400 text-red-600" : ""}`}
-          >
-            <Clock3 size={14} /> {formatTime(timerRemaining)}
-          </span>
-        )}
+        <QuizTimer seconds={timerRemaining} enabled={timerEnabled} />
       </div>
       <div className="mt-4 h-2 overflow-hidden rounded-full bg-[var(--line)]">
         <div
@@ -469,92 +464,4 @@ function ErrorMessage({ message }: { message: string }) {
       {message}
     </div>
   );
-}
-
-function Scorecard({
-  total,
-  score,
-  answeredCount,
-  difficulty,
-  timedOut,
-  onRestart,
-}: {
-  total: number;
-  score: number;
-  answeredCount: number;
-  difficulty: QuizDifficulty;
-  timedOut: boolean;
-  onRestart: () => void;
-}) {
-  const incorrect = answeredCount - score;
-  const unanswered = total - answeredCount;
-  const percentage = total ? Math.round((score / total) * 100) : 0;
-  return (
-    <section className="panel mt-12 rounded-3xl p-7">
-      <div className="flex items-center gap-4">
-        <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[var(--accent)]/15 text-[var(--accent)]">
-          <Trophy size={27} />
-        </div>
-        <div>
-          <p className="eyebrow">Quiz complete</p>
-          <h2 className="mt-1 text-3xl font-black">Your scorecard</h2>
-        </div>
-      </div>
-      <div className="mt-8 rounded-2xl bg-[var(--ink)] p-6 text-[var(--background)]">
-        <p className="text-sm opacity-70">Final score</p>
-        <p className="mt-2 text-6xl font-black">{percentage}%</p>
-        <p className="mt-2 text-sm opacity-70">
-          {score} of {total} questions correct · {difficulty} difficulty
-        </p>
-        {timedOut && (
-          <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-red-400/20 px-3 py-1 text-xs font-bold text-red-200">
-            <Clock3 size={14} /> Time expired
-          </p>
-        )}
-      </div>
-      <div className="mt-5 grid gap-3 sm:grid-cols-3">
-        <ScoreStat label="Correct" value={score} tone="text-green-700" />
-        <ScoreStat label="Incorrect" value={incorrect} tone="text-red-700" />
-        <ScoreStat
-          label="Unanswered"
-          value={unanswered}
-          tone="text-[var(--muted)]"
-        />
-      </div>
-      <button
-        type="button"
-        onClick={onRestart}
-        className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-bold text-[var(--background)]"
-      >
-        <RotateCcw size={15} /> Build another quiz
-      </button>
-    </section>
-  );
-}
-
-function ScoreStat({
-  label,
-  value,
-  tone,
-}: {
-  label: string;
-  value: number;
-  tone: string;
-}) {
-  return (
-    <div className="rounded-2xl border p-4">
-      <p className="text-xs font-bold uppercase tracking-wider text-[var(--muted)]">
-        {label}
-      </p>
-      <p className={`mt-2 text-3xl font-black ${tone}`}>{value}</p>
-    </div>
-  );
-}
-
-function formatTime(seconds: number) {
-  const minutes = Math.floor(seconds / 60)
-    .toString()
-    .padStart(2, "0");
-  const remainder = (seconds % 60).toString().padStart(2, "0");
-  return `${minutes}:${remainder}`;
 }

@@ -1,0 +1,916 @@
+{
+  "metadata": {
+    "exam": "GATE CSE",
+    "years": [
+      2018,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "totalQuestions": 29,
+    "answerStatus": "verified_and_filled",
+    "excludedQuestions": [
+      {
+        "id": "gate-2025-cs1-q55",
+        "reason": "The extracted question references a table instance that is missing from the JSON, so the NAT answer cannot be determined reliably from the supplied source."
+      }
+    ],
+    "answerFormat": {
+      "MCQ": "single option label string",
+      "MSQ": "array of option label strings",
+      "NAT": "number"
+    }
+  },
+  "questions": [
+    {
+      "id": "gate-2018-cs-q11",
+      "exam": "GATE",
+      "year": 2018,
+      "paper": "CS",
+      "questionNumber": 11,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "er-model",
+      "difficulty": "easy",
+      "question": "In an Entity-Relationship (ER) model, suppose R is a many-to-one relationship from entity set E1 to entity set E2. Assume that E1 and E2 participate totally in R and that the cardinality of E1 is greater than the cardinality of E2. Which one of the following is true about R?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Every entity in E1 is associated with exactly one entity in E2."
+        },
+        {
+          "label": "B",
+          "text": "Some entity in E1 is associated with more than one entity in E2."
+        },
+        {
+          "label": "C",
+          "text": "Every entity in E2 is associated with exactly one entity in E1."
+        },
+        {
+          "label": "D",
+          "text": "Every entity in E2 is associated with at most one entity in E1."
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "Use the meaning of many-to-one and then apply total participation and the stated cardinalities.",
+      "source": "GATE CSE 2018"
+    },
+    {
+      "id": "gate-2018-cs-q12",
+      "exam": "GATE",
+      "year": 2018,
+      "paper": "CS",
+      "questionNumber": 12,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "sql",
+      "difficulty": "easy",
+      "question": "Consider the following two tables and four queries in SQL. Book (isbn, bname), Stock (isbn, copies). Query 1: SELECT B.isbn, S.copies FROM Book B INNER JOIN Stock S ON B.isbn = S.isbn; Query 2: SELECT B.isbn, S.copies FROM Book B LEFT OUTER JOIN Stock S ON B.isbn = S.isbn; Query 3: SELECT B.isbn, S.copies FROM Book B RIGHT OUTER JOIN Stock S ON B.isbn = S.isbn; Query 4: SELECT B.isbn, S.copies FROM Book B FULL OUTER JOIN Stock S ON B.isbn = S.isbn; Which one of the queries above is certain to have an output that is a superset of the outputs of the other three queries?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Query 1"
+        },
+        {
+          "label": "B",
+          "text": "Query 2"
+        },
+        {
+          "label": "C",
+          "text": "Query 3"
+        },
+        {
+          "label": "D",
+          "text": "Query 4"
+        }
+      ],
+      "correctAnswer": "D",
+      "hint": "Compare which outer join preserves unmatched rows from both input relations.",
+      "source": "GATE CSE 2018"
+    },
+    {
+      "id": "gate-2018-cs-q41",
+      "exam": "GATE",
+      "year": 2018,
+      "paper": "CS",
+      "questionNumber": 41,
+      "type": "MCQ",
+      "marks": 2,
+      "topic": "relational-algebra",
+      "difficulty": "medium",
+      "question": "Consider the relations r(A, B) and s(B, C), where s.B is a primary key and r.B is a foreign key referencing s.B. Consider the query Q: r ⋈ (σ_B<5(s)). Let LOJ denote the natural left outer-join operation. Assume that r and s contain no null values. Which one of the following queries is NOT equivalent to Q?",
+      "options": [
+        {
+          "label": "A",
+          "text": "σ_B<5(r ⋈ s)"
+        },
+        {
+          "label": "B",
+          "text": "σ_B<5(r LOJ s)"
+        },
+        {
+          "label": "C",
+          "text": "r LOJ (σ_B<5(s))"
+        },
+        {
+          "label": "D",
+          "text": "σ_B<5(r) LOJ s"
+        }
+      ],
+      "correctAnswer": "C",
+      "hint": "Track which unmatched tuples a left outer join preserves before and after applying the selection.",
+      "source": "GATE CSE 2018"
+    },
+    {
+      "id": "gate-2018-cs-q42",
+      "exam": "GATE",
+      "year": 2018,
+      "paper": "CS",
+      "questionNumber": 42,
+      "type": "MCQ",
+      "marks": 2,
+      "topic": "normalization",
+      "difficulty": "hard",
+      "question": "Consider the following four relational schemas. For each schema, all non-trivial functional dependencies are listed. The underlined attributes are the respective primary keys. Schema I: Registration (rollno, courses), where field courses is a set-valued attribute containing the set of courses a student has registered for. Non-trivial functional dependency: rollno → courses. Schema II: Registration (rollno, courseid, email), with rollno, courseid → email and email → rollno. Schema III: Registration (rollno, courseid, marks, grade), with rollno, courseid → marks, grade and marks → grade. Schema IV: Registration (rollno, courseid, credit), with rollno, courseid → credit and courseid → credit. Which one of the relational schemas above is in 3NF but not in BCNF?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Schema I"
+        },
+        {
+          "label": "B",
+          "text": "Schema II"
+        },
+        {
+          "label": "C",
+          "text": "Schema III"
+        },
+        {
+          "label": "D",
+          "text": "Schema IV"
+        }
+      ],
+      "correctAnswer": "B",
+      "hint": "For each schema, identify candidate keys and test every non-trivial FD against the 3NF and BCNF conditions.",
+      "source": "GATE CSE 2018"
+    },
+    {
+      "id": "gate-2022-cs-q14",
+      "exam": "GATE",
+      "year": 2022,
+      "paper": "CS",
+      "questionNumber": 14,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "normalization",
+      "difficulty": "medium",
+      "question": "In a relational data model, which one of the following statements is TRUE?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A relation with only two attributes is always in BCNF."
+        },
+        {
+          "label": "B",
+          "text": "If all attributes of a relation are prime attributes, then the relation is in BCNF."
+        },
+        {
+          "label": "C",
+          "text": "Every relation has at least one non-prime attribute."
+        },
+        {
+          "label": "D",
+          "text": "BCNF decompositions preserve functional dependencies."
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "Check each statement directly against the definitions of prime attributes and BCNF.",
+      "source": "GATE CSE 2022"
+    },
+    {
+      "id": "gate-2022-cs-q25",
+      "exam": "GATE",
+      "year": 2022,
+      "paper": "CS",
+      "questionNumber": 25,
+      "type": "MSQ",
+      "marks": 1,
+      "topic": "relational-algebra",
+      "difficulty": "medium",
+      "question": "Consider the following three relations in a relational database. Employee(eId, Name), Brand(bId, bName), Own(eId, bId). Which of the following relational algebra expressions return the set of eIds who own all the brands?",
+      "options": [
+        {
+          "label": "A",
+          "text": "π eId (π eId,bId (Own) ÷ π bId (Brand))"
+        },
+        {
+          "label": "B",
+          "text": "π eId (Own) − π eId ((π eId (Own) × π bId (Brand)) − π eId,bId (Own))"
+        },
+        {
+          "label": "C",
+          "text": "π eId (π eId,bId (Own) ÷ π bId (Own))"
+        },
+        {
+          "label": "D",
+          "text": "π eId ((π eId (Own) × π bId (Own)) ÷ π bId (Brand))"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B"
+      ],
+      "hint": "Interpret the universal condition as relational division and verify the attributes of the dividend and divisor.",
+      "source": "GATE CSE 2022"
+    },
+    {
+      "id": "gate-2022-cs-q31",
+      "exam": "GATE",
+      "year": 2022,
+      "paper": "CS",
+      "questionNumber": 31,
+      "type": "NAT",
+      "marks": 1,
+      "topic": "candidate-keys",
+      "difficulty": "medium",
+      "question": "Consider a relation R (A, B, C, D, E) with the following three functional dependencies. AB → C; BC → D; C → E; The number of superkeys in the relation R is _____________.",
+      "options": [],
+      "correctAnswer": 8,
+      "hint": "Find which attribute sets determine all five attributes, then count all superkeys containing a minimal determining set.",
+      "source": "GATE CSE 2022"
+    },
+    {
+      "id": "gate-2022-cs-q39",
+      "exam": "GATE",
+      "year": 2022,
+      "paper": "CS",
+      "questionNumber": 39,
+      "type": "MCQ",
+      "marks": 2,
+      "topic": "serializability",
+      "difficulty": "hard",
+      "question": "Let Ri(z) and Wi(z) denote read and write operations on a data element z by a transaction Ti, respectively. Consider the schedule S with four transactions. S: R4(x) R2(x) R3(x) R1(y) W1(y) W2(x) W3(y) R4(y). Which one of the following serial schedules is conflict equivalent to S?",
+      "options": [
+        {
+          "label": "A",
+          "text": "T1 → T2 → T3 → T4"
+        },
+        {
+          "label": "B",
+          "text": "T1 → T3 → T2 → T4"
+        },
+        {
+          "label": "C",
+          "text": "T3 → T2 → T1 → T4"
+        },
+        {
+          "label": "D",
+          "text": "T3 → T1 → T2 → T4"
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "Construct the precedence graph from every conflicting read/write pair and derive the required transaction order.",
+      "source": "GATE CSE 2022"
+    },
+    {
+      "id": "gate-2023-cs-q16",
+      "exam": "GATE",
+      "year": 2023,
+      "paper": "CS",
+      "questionNumber": 16,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "relational-model",
+      "difficulty": "easy",
+      "question": "Which one of the options given below refers to the degree (or arity) of a relation in relational database systems?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Number of attributes of its relation schema."
+        },
+        {
+          "label": "B",
+          "text": "Number of tuples stored in the relation."
+        },
+        {
+          "label": "C",
+          "text": "Number of entries in the relation."
+        },
+        {
+          "label": "D",
+          "text": "Number of distinct domains of its relation schema."
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "Recall whether relation degree refers to attributes or tuples.",
+      "source": "GATE CSE 2023"
+    },
+    {
+      "id": "gate-2023-cs-q61",
+      "exam": "GATE",
+      "year": 2023,
+      "paper": "CS",
+      "questionNumber": 61,
+      "type": "NAT",
+      "marks": 2,
+      "topic": "sql",
+      "difficulty": "easy",
+      "question": "Consider the following table named Student in a relational database. The primary key of this table is rollNum. Student: rollNum, name, gender, marks: 1 Naman M 62; 2 Aliya F 70; 3 Aliya F 80; 4 James M 82; 5 Swati F 65. The SQL query below is executed on this database: SELECT * FROM Student WHERE gender = ‘F’ AND marks > 65; The number of rows returned by the query is ________.",
+      "options": [],
+      "correctAnswer": 2,
+      "hint": "Apply both predicates to each row and count only rows satisfying both conditions.",
+      "source": "GATE CSE 2023"
+    },
+    {
+      "id": "gate-2023-cs-q62",
+      "exam": "GATE",
+      "year": 2023,
+      "paper": "CS",
+      "questionNumber": 62,
+      "type": "NAT",
+      "marks": 2,
+      "topic": "indexing",
+      "difficulty": "hard",
+      "question": "Consider a database of fixed-length records, stored as an ordered file. The database has 25,000 records, with each record being 100 bytes, of which the primary key occupies 15 bytes. The data file is block-aligned in that each data record is fully contained within a block. The database is indexed by a primary index file, which is also stored as a block-aligned ordered file. Suppose the block size of the file system is 1024 bytes, and a pointer to a block occupies 5 bytes. The system uses binary search on the index file to search for a record with a given key. You may assume that a binary search on an index file of b blocks takes ⌈log2 b⌉ block accesses in the worst case. Given a key, the number of block accesses required to identify the block in the data file that may contain a record with the key, in the worst case, is ________.",
+      "options": [],
+      "correctAnswer": 6,
+      "hint": "First determine records per data block and index entries per index block, then apply binary search to the index blocks.",
+      "source": "GATE CSE 2023"
+    },
+    {
+      "id": "gate-2024-cs1-q21",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS1",
+      "questionNumber": 21,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "b-trees",
+      "difficulty": "easy",
+      "question": "In a B+ tree, the requirement of at least half-full (50%) node occupancy is relaxed for which one of the following cases?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only the root node"
+        },
+        {
+          "label": "B",
+          "text": "All leaf nodes"
+        },
+        {
+          "label": "C",
+          "text": "All internal nodes"
+        },
+        {
+          "label": "D",
+          "text": "Only the leftmost leaf node"
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "Recall the special occupancy rule for the root in a B+ tree.",
+      "source": "GATE CSE 2024 CS1"
+    },
+    {
+      "id": "gate-2024-cs1-q22",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS1",
+      "questionNumber": 22,
+      "type": "MSQ",
+      "marks": 1,
+      "topic": "relational-model",
+      "difficulty": "easy",
+      "question": "Which of the following statements about a relation R in first normal form (1NF) is/are TRUE?",
+      "options": [
+        {
+          "label": "A",
+          "text": "R can have a multi-attribute key"
+        },
+        {
+          "label": "B",
+          "text": "R cannot have a foreign key"
+        },
+        {
+          "label": "C",
+          "text": "R cannot have a composite attribute"
+        },
+        {
+          "label": "D",
+          "text": "R cannot have more than one candidate key"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C"
+      ],
+      "hint": "Separate the definition of 1NF from restrictions on keys, foreign keys, and composite attributes.",
+      "source": "GATE CSE 2024 CS1"
+    },
+    {
+      "id": "gate-2024-cs1-q44",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS1",
+      "questionNumber": 44,
+      "type": "MSQ",
+      "marks": 2,
+      "topic": "functional-dependencies",
+      "difficulty": "medium",
+      "question": "The symbol → indicates functional dependency in the context of a relational database. Which of the following options is/are TRUE?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(X, Y) → (Z, W) implies X → (Z, W)"
+        },
+        {
+          "label": "B",
+          "text": "(X, Y) → (Z, W) implies (X, Y) → Z"
+        },
+        {
+          "label": "C",
+          "text": "((X, Y) → Z and W → Y) implies (X, W) → Z"
+        },
+        {
+          "label": "D",
+          "text": "(X → Y and Y → Z) implies X → Z"
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "hint": "Apply the Armstrong axioms, especially decomposition, augmentation, and transitivity.",
+      "source": "GATE CSE 2024 CS1"
+    },
+    {
+      "id": "gate-2024-cs1-q46",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS1",
+      "questionNumber": 46,
+      "type": "MSQ",
+      "marks": 2,
+      "topic": "serializability",
+      "difficulty": "hard",
+      "question": "Consider the following read-write schedule S over three transactions T1, T2, and T3, where the subscripts in the schedule indicate transaction IDs: S: r1(z); w1(z); r2(x); r3(y); w3(y); r2(y); w2(x); w2(y); Which of the following transaction schedules is/are conflict equivalent to S?",
+      "options": [
+        {
+          "label": "A",
+          "text": "T1 T2 T3"
+        },
+        {
+          "label": "B",
+          "text": "T1 T3 T2"
+        },
+        {
+          "label": "C",
+          "text": "T3 T2 T1"
+        },
+        {
+          "label": "D",
+          "text": "T3 T1 T2"
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "hint": "Build the precedence constraints caused by conflicting operations and compare each proposed serial order.",
+      "source": "GATE CSE 2024 CS1"
+    },
+    {
+      "id": "gate-2024-cs2-q19",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS2",
+      "questionNumber": 19,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "transactions",
+      "difficulty": "easy",
+      "question": "Once the DBMS informs the user that a transaction has been successfully completed, its effect should persist even if the system crashes before all its changes are reflected on disk. This property is called",
+      "options": [
+        {
+          "label": "A",
+          "text": "durability"
+        },
+        {
+          "label": "B",
+          "text": "atomicity"
+        },
+        {
+          "label": "C",
+          "text": "consistency"
+        },
+        {
+          "label": "D",
+          "text": "isolation"
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "Match the property to the requirement that committed effects survive failures.",
+      "source": "GATE CSE 2024 CS2"
+    },
+    {
+      "id": "gate-2024-cs2-q20",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS2",
+      "questionNumber": 20,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "er-model",
+      "difficulty": "easy",
+      "question": "In the context of owner and weak entity sets in the ER (Entity-Relationship) data model, which one of the following statements is TRUE?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The weak entity set MUST have total participation in the identifying relationship"
+        },
+        {
+          "label": "B",
+          "text": "The owner entity set MUST have total participation in the identifying relationship"
+        },
+        {
+          "label": "C",
+          "text": "Both weak and owner entity sets MUST have total participation in the identifying relationship"
+        },
+        {
+          "label": "D",
+          "text": "Neither weak entity set nor owner entity set MUST have total participation in the identifying relationship"
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "Recall the identifying relationship requirement for a weak entity set.",
+      "source": "GATE CSE 2024 CS2"
+    },
+    {
+      "id": "gate-2024-cs2-q26",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS2",
+      "questionNumber": 26,
+      "type": "MSQ",
+      "marks": 1,
+      "topic": "indexing",
+      "difficulty": "medium",
+      "question": "Which of the following file organizations is/are I/O efficient for the scan operation in DBMS?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sorted"
+        },
+        {
+          "label": "B",
+          "text": "Heap"
+        },
+        {
+          "label": "C",
+          "text": "Unclustered tree index"
+        },
+        {
+          "label": "D",
+          "text": "Unclustered hash index"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B"
+      ],
+      "hint": "For a full scan, compare sequential block access with index structures that may cause scattered I/O.",
+      "source": "GATE CSE 2024 CS2"
+    },
+    {
+      "id": "gate-2024-cs2-q27",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS2",
+      "questionNumber": 27,
+      "type": "MSQ",
+      "marks": 1,
+      "topic": "concurrency-control",
+      "difficulty": "medium",
+      "question": "Which of the following statements about the Two Phase Locking (2PL) protocol is/are TRUE?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2PL permits only serializable schedules"
+        },
+        {
+          "label": "B",
+          "text": "With 2PL, a transaction always locks the data item being read or written just before every operation and always releases the lock just after the operation"
+        },
+        {
+          "label": "C",
+          "text": "With 2PL, once a lock is released on any data item inside a transaction, no more locks on any data item can be obtained inside that transaction"
+        },
+        {
+          "label": "D",
+          "text": "A deadlock is possible with 2PL"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "hint": "Check the growing and shrinking phases separately and distinguish serializability from deadlock behavior.",
+      "source": "GATE CSE 2024 CS2"
+    },
+    {
+      "id": "gate-2024-cs2-q45",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS2",
+      "questionNumber": 45,
+      "type": "NAT",
+      "marks": 2,
+      "topic": "relational-algebra",
+      "difficulty": "hard",
+      "question": "The relation schema, Person(pid,city), describes the city of residence for every person uniquely identified by pid. The following relational algebra operators are available: selection, projection, cross product, and rename. To find the list of cities where at least 3 persons reside, using the above operators, the minimum number of cross product operations that must be used is ________.",
+      "options": [],
+      "correctAnswer": 2,
+      "hint": "Use renamed copies of Person and count how many independent copies are needed to express three persons with the same city.",
+      "source": "GATE CSE 2024 CS2"
+    },
+    {
+      "id": "gate-2024-cs2-q56",
+      "exam": "GATE",
+      "year": 2024,
+      "paper": "CS2",
+      "questionNumber": 56,
+      "type": "NAT",
+      "marks": 2,
+      "topic": "functional-dependencies",
+      "difficulty": "medium",
+      "question": "A functional dependency F: X → Y is termed as a useful functional dependency if and only if it satisfies all the following three conditions: X is not the empty set; Y is not the empty set; Intersection of X and Y is the empty set. For a relation R with 4 attributes, the total number of possible useful functional dependencies is ________.",
+      "options": [],
+      "correctAnswer": 50,
+      "hint": "Count all nonempty choices of X and Y whose attribute sets are disjoint.",
+      "source": "GATE CSE 2024 CS2"
+    },
+    {
+      "id": "gate-2025-cs1-q15",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS1",
+      "questionNumber": 15,
+      "type": "MCQ",
+      "marks": 1,
+      "topic": "recovery",
+      "difficulty": "medium",
+      "question": "A schedule of three database transactions T1, T2, and T3 is shown. Ri(A) and Wi(A) denote read and write of data item A by transaction Ti, i = 1,2,3. The transaction T1 aborts at the end. Which other transaction(s) will be required to be rolled back? R1(X) W1(Y) R2(X) R2(Y) R3(Y) ABORT(T1)",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only T2"
+        },
+        {
+          "label": "B",
+          "text": "Only T3"
+        },
+        {
+          "label": "C",
+          "text": "Both T2 and T3"
+        },
+        {
+          "label": "D",
+          "text": "Neither T2 nor T3"
+        }
+      ],
+      "correctAnswer": "C",
+      "hint": "Trace which transactions read values written by the transaction that aborts.",
+      "source": "GATE CSE 2025 CS1"
+    },
+    {
+      "id": "gate-2025-cs1-q39",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS1",
+      "questionNumber": 39,
+      "type": "MCQ",
+      "marks": 2,
+      "topic": "relational-algebra",
+      "difficulty": "medium",
+      "question": "Consider two relations describing teams and players in a sports league: teams(tid,tname): tid and tname are team-id and team-name, respectively; players(pid,pname,tid): pid, pname, and tid denote player-id, player-name and the team-id of the player, respectively. Which ONE of the following tuple relational calculus queries returns the name of the players who play for the team having tname as 'MI'?",
+      "options": [
+        {
+          "label": "A",
+          "text": "{ p.pname | p ∈ players ∧ ∃t (t ∈ teams ∧ p.tid = t.tid ∧ t.tname = 'MI') }"
+        },
+        {
+          "label": "B",
+          "text": "{ p.pname | p ∈ teams ∧ ∃t (t ∈ players ∧ p.tid = t.tid ∧ t.tname = 'MI') }"
+        },
+        {
+          "label": "C",
+          "text": "{ p.pname | p ∈ players ∧ ∃t (t ∈ teams ∧ t.tname = 'MI') }"
+        },
+        {
+          "label": "D",
+          "text": "{ p.pname | p ∈ teams ∧ ∃t (t ∈ players ∧ t.tname = 'MI') }"
+        }
+      ],
+      "correctAnswer": "A",
+      "hint": "The output variable must range over players and the team condition must be connected through the team identifier.",
+      "source": "GATE CSE 2025 CS1"
+    },
+    {
+      "id": "gate-2025-cs1-q47",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS1",
+      "questionNumber": 47,
+      "type": "MSQ",
+      "marks": 2,
+      "topic": "normalization",
+      "difficulty": "medium",
+      "question": "Consider a relational schema team(name,city,owner), with functional dependencies {name → city, name → owner}. The relation team is decomposed into two relations, t1(name,city) and t2(name,owner). Which of the following statement(s) is/are TRUE?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The relation team is NOT in BCNF."
+        },
+        {
+          "label": "B",
+          "text": "The relations t1 and t2 are in BCNF."
+        },
+        {
+          "label": "C",
+          "text": "The decomposition constitutes a lossless join."
+        },
+        {
+          "label": "D",
+          "text": "The relation team is NOT in 3NF."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C"
+      ],
+      "hint": "Determine the candidate key from the FDs, then test the original and decomposed relations against 3NF and BCNF.",
+      "source": "GATE CSE 2025 CS1"
+    },
+    {
+      "id": "gate-2025-cs2-q27",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS2",
+      "questionNumber": 27,
+      "type": "MSQ",
+      "marks": 1,
+      "topic": "concurrency-control",
+      "difficulty": "medium",
+      "question": "An audit of a banking transactions system has found that on an earlier occasion, two joint holders of account A attempted simultaneous transfers of Rs. 10000 each from account A to account B. Both transactions read the same value, Rs. 11000, as the initial balance in A and were allowed to go through. B was credited Rs. 10000 twice. A was debited only once and ended up with a balance of Rs. 1000. Which of the following properties is/are certain to have been violated by the system?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Atomicity"
+        },
+        {
+          "label": "B",
+          "text": "Consistency"
+        },
+        {
+          "label": "C",
+          "text": "Isolation"
+        },
+        {
+          "label": "D",
+          "text": "Durability"
+        }
+      ],
+      "correctAnswer": "C",
+      "hint": "Focus on the simultaneous reads and lost-update behavior, then distinguish ACID properties.",
+      "source": "GATE CSE 2025 CS2"
+    },
+    {
+      "id": "gate-2025-cs2-q46",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS2",
+      "questionNumber": 46,
+      "type": "MSQ",
+      "marks": 2,
+      "topic": "normalization",
+      "difficulty": "medium",
+      "question": "Consider the following relational schema along with all the functional dependencies that hold on them. R1(A, B, C, D, E): {D → E, EA → B, EB → C}. R2(A, B, C, D): {A → D, A → B, C → A}. Which of the following statement(s) is/are TRUE?",
+      "options": [
+        {
+          "label": "A",
+          "text": "R1 is in 3NF"
+        },
+        {
+          "label": "B",
+          "text": "R2 is in 3NF"
+        },
+        {
+          "label": "C",
+          "text": "R1 is NOT in 3NF"
+        },
+        {
+          "label": "D",
+          "text": "R2 is NOT in 3NF"
+        }
+      ],
+      "correctAnswer": [
+        "C",
+        "D"
+      ],
+      "hint": "Find candidate keys for each schema and check whether every determinant is a superkey or its dependent attribute is prime.",
+      "source": "GATE CSE 2025 CS2"
+    },
+    {
+      "id": "gate-2025-cs2-q53",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS2",
+      "questionNumber": 53,
+      "type": "MSQ",
+      "marks": 2,
+      "topic": "serializability",
+      "difficulty": "hard",
+      "question": "Consider the database transactions T1 and T2, and data items X and Y. Which of the schedule(s) is/are conflict serializable?",
+      "options": [
+        {
+          "label": "A",
+          "text": "R1(X), W2(X), W1(Y), W2(Y), R1(X), W1(X), COMMIT(T2), COMMIT(T1)"
+        },
+        {
+          "label": "B",
+          "text": "W2(X), R1(X), W2(Y), W1(Y), R1(X), COMMIT(T2), W1(X), COMMIT(T1)"
+        },
+        {
+          "label": "C",
+          "text": "R1(X), W1(Y), W2(X), W2(Y), R1(X), W1(X), COMMIT(T1), COMMIT(T2)"
+        },
+        {
+          "label": "D",
+          "text": "W2(X), R1(X), W1(Y), W2(Y), R1(X), COMMIT(T2), W1(X), COMMIT(T1)"
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C"
+      ],
+      "hint": "For each schedule, build the precedence graph using all conflicting read/write and write/write pairs.",
+      "source": "GATE CSE 2025 CS2"
+    },
+    {
+      "id": "gate-2025-cs2-q54",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS2",
+      "questionNumber": 54,
+      "type": "MSQ",
+      "marks": 2,
+      "topic": "sql",
+      "difficulty": "medium",
+      "question": "Consider the following relational schema: Students (rollno: integer, name: string, age: integer, cgpa: real), Courses (courseno: integer, cname: string, credits: integer), Enrolled (rollno: integer, courseno: integer, grade: string). Which of the following options is/are correct SQL query/queries to retrieve the names of the students enrolled in course number (i.e., courseno) 1470?",
+      "options": [
+        {
+          "label": "A",
+          "text": "SELECT S.name FROM Students S WHERE EXISTS (SELECT * FROM Enrolled E WHERE E.courseno = 1470 AND E.rollno = S.rollno);"
+        },
+        {
+          "label": "B",
+          "text": "SELECT S.name FROM Students S WHERE SIZEOF (SELECT * FROM Enrolled E WHERE E.courseno = 1470 AND E.rollno = S.rollno) > 0;"
+        },
+        {
+          "label": "C",
+          "text": "SELECT S.name FROM Students S WHERE 0 < (SELECT COUNT(*) FROM Enrolled E WHERE E.courseno = 1470 AND E.rollno = S.rollno);"
+        },
+        {
+          "label": "D",
+          "text": "SELECT S.name FROM Students S NATURAL JOIN Enrolled E WHERE E.courseno = 1470;"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "hint": "Check which constructs are valid SQL and whether the query correctly links Students to Enrolled on rollno.",
+      "source": "GATE CSE 2025 CS2"
+    },
+    {
+      "id": "gate-2025-cs2-q57",
+      "exam": "GATE",
+      "year": 2025,
+      "paper": "CS2",
+      "questionNumber": 57,
+      "type": "NAT",
+      "marks": 2,
+      "topic": "b-trees",
+      "difficulty": "medium",
+      "question": "In a B+- tree where each node can hold at most four key values, a root to leaf path consists of the following nodes: A = (49, 77, 83, -), B = (7, 19, 33, 44), C = (20*, 22*, 25*, 26*). The *-marked keys signify that these are data entries in a leaf. Assume that a pointer between keys k1 and k2 points to a subtree containing keys in [k1, k2), and that when a leaf is created, the smallest key in it is copied up into its parent. A record with key value 23 is inserted into the B+- tree. The smallest key value in the parent of the leaf that contains 25* is __________.",
+      "options": [],
+      "correctAnswer": 25,
+      "hint": "Perform the leaf split caused by inserting 23 and update the parent separator using the stated copy-up rule.",
+      "source": "GATE CSE 2025 CS2"
+    }
+  ]
+}
