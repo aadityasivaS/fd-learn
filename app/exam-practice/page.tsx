@@ -220,15 +220,18 @@ export default function ExamPractice() {
             onStart={startExam}
           />
         ) : complete ? (
-          <QuizScorecard
-            total={questions.length}
-            score={score}
-            answeredCount={answeredCount}
-            difficulty={difficulty === "all" ? "Mixed GATE" : difficulty}
-            timedOut={timedOut}
-            onRestart={restart}
-            title="Exam scorecard"
-          />
+          <>
+            <QuizScorecard
+              total={questions.length}
+              score={score}
+              answeredCount={answeredCount}
+              difficulty={difficulty === "all" ? "Mixed GATE" : difficulty}
+              timedOut={timedOut}
+              onRestart={restart}
+              title="Exam scorecard"
+            />
+            <ExamReview questions={questions} results={results} />
+          </>
         ) : (
           <ExamCard
             question={question}
@@ -584,4 +587,92 @@ function isCorrect(
   if (question.type === "NAT")
     return Number(answer) === Number(question.correctAnswer);
   return answer === question.correctAnswer;
+}
+
+function ExamReview({
+  questions,
+  results,
+}: {
+  questions: ExamQuestion[];
+  results: Record<string, AnswerResult>;
+}) {
+  return (
+    <section className="panel mt-6 rounded-3xl p-7">
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <p className="eyebrow">Post-exam review</p>
+          <h2 className="mt-1 text-2xl font-black">
+            Questions, answers, and hints
+          </h2>
+        </div>
+        <span className="text-xs font-bold text-[var(--muted)]">
+          {questions.length} reviewed
+        </span>
+      </div>
+      <div className="mt-6 space-y-3">
+        {questions.map((question, index) => {
+          const result = results[question.id];
+          return (
+            <details className="rounded-2xl border p-5" key={question.id}>
+              <summary className="cursor-pointer list-none">
+                <div className="flex items-start gap-3">
+                  <span className="font-mono text-sm font-bold text-[var(--accent)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-bold leading-6">{question.question}</p>
+                    <p className="mt-2 text-xs text-[var(--muted)]">
+                      {question.source} · {question.type} ·{" "}
+                      {result
+                        ? result.correct
+                          ? "Correct"
+                          : "Incorrect"
+                        : "Unanswered"}
+                    </p>
+                  </div>
+                </div>
+              </summary>
+              <div className="mt-5 space-y-4 border-t pt-4 text-sm">
+                <div>
+                  <p className="field-label">Correct answer</p>
+                  <p className="rounded-xl bg-green-100 p-3 font-semibold text-green-900">
+                    {formatCorrectAnswer(question)}
+                  </p>
+                </div>
+                {result && (
+                  <div>
+                    <p className="field-label">Your answer</p>
+                    <p
+                      className={`rounded-xl p-3 font-semibold ${result.correct ? "bg-green-100 text-green-900" : "bg-red-100 text-red-900"}`}
+                    >
+                      {result.answer}
+                    </p>
+                  </div>
+                )}
+                <div>
+                  <p className="field-label">Hint</p>
+                  <p className="rounded-xl border p-3 leading-6 text-[var(--muted)]">
+                    {question.hint}
+                  </p>
+                </div>
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function formatCorrectAnswer(question: ExamQuestion) {
+  if (question.type === "MSQ" && Array.isArray(question.correctAnswer)) {
+    return question.correctAnswer.join(", ");
+  }
+  if (question.type === "MCQ" && typeof question.correctAnswer === "string") {
+    const option = question.options.find(
+      (item) => item.label === question.correctAnswer,
+    );
+    return option ? `${option.label}. ${option.text}` : question.correctAnswer;
+  }
+  return String(question.correctAnswer);
 }
